@@ -14,3 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/house1.unity
     guid: 693ef9e7a6321194e99402ff4c900ad5
+  - enabled: 1
+    path: Assets/house2.unity
+    guid: d43cf53dcb5a58243a1fcd270d61526a
+  - enabled: 1
+    path: Assets/ballgame.unity
+    guid: 9899aeb8822ce494c87462821efc809d

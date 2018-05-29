@@ -120,7 +120,10 @@ public class VirtualButton : MonoBehaviour, IVirtualButtonEventHandler
         {
             GoNextScene(2);
         }
-
+        if (transform.GetChild(1).localPosition == house_two_location)
+        {
+            GoNextScene(3);
+        }
         transform.GetChild(1).localPosition = new Vector3(transform.GetChild(0).localPosition.x, staY, transform.GetChild(0).localPosition.z);
         //same
         if (transform.GetChild(1).localPosition == des)
