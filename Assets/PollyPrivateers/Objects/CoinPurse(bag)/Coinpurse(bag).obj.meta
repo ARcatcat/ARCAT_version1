@@ -11,6 +11,8 @@ ModelImporter:
     400000: //RootNode
     400002: RetopoGroup1.001
     400004: RetopoGroup2
+    2100000: RetopoGroup1.001Mat
+    2100002: RetopoGroup2Mat
     2300000: RetopoGroup1.001
     2300002: RetopoGroup2
     3300000: RetopoGroup1.001

@@ -22,6 +22,13 @@ ModelImporter:
     400012: Stone5
     400014: Stone6
     2100000: UV
+    2100002: GroundMat
+    2100004: StoneMat
+    2100006: Stone2Mat
+    2100008: Stone3Mat
+    2100010: Stone4Mat
+    2100012: Stone5Mat
+    2100014: Stone6Mat
     2300000: Ground
     2300002: Stone
     2300004: Stone2

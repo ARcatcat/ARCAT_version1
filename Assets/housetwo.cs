@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class housetwo : MonoBehaviour, IVirtualButtonEventHandler
 {
     //定义NPC对话数据  
-    private string[] mData ={"你好,我是NPC","欢迎来到圣诞小屋",
+    private string[] mData ={"你好，我是NPC","欢迎来到圣诞小屋",
         "开启游戏将会获得丰厚的奖励哦","快开始你的游戏吧"};
     //当前对话索引  
     private int index = 0;

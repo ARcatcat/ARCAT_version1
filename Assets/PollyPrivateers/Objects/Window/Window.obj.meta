@@ -19,6 +19,10 @@ ModelImporter:
     400008: //RootNode
     400010: default
     400012: Window
+    2100000: Cube.001Mat
+    2100002: Cube.002Mat
+    2100004: Cube.003_Cube.004Mat
+    2100006: WindowMat
     2300000: Cube.000_Cube.003
     2300002: Cube.001
     2300004: Cube.002

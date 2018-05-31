@@ -11,6 +11,7 @@ ModelImporter:
     400000: //RootNode
     400002: plank1
     400004: default
+    2100000: defaultMat
     2300000: plank1
     2300002: default
     3300000: plank1

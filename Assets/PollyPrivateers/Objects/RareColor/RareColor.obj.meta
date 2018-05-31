@@ -14,6 +14,7 @@ ModelImporter:
     400004: TheBook_Cube.001
     400006: default
     2100000: Material.001
+    2100002: defaultMat
     2300000: Pages_Cube.002
     2300002: TheBook_Cube.001
     2300004: default

@@ -16,6 +16,10 @@ ModelImporter:
     400006: pillow.001_pillow
     400008: Plane_Plane.003
     2100000: None
+    2100002: Cube.001Mat
+    2100004: pillowMat
+    2100006: pillow.001_pillowMat
+    2100008: Plane_Plane.003Mat
     2300000: Cube.001
     2300002: pillow
     2300004: pillow.001_pillow
