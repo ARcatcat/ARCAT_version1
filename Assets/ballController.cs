@@ -14,10 +14,17 @@ public class ballController : MonoBehaviour {
     private GameObject btnObj;//"Button"为你的Button的名称  
     private Button btn;
 
+    Global _instance;
+    Text mtext;
+    int score = 0;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
         rb.Sleep();
+
+        _instance = Global.GetInstance();
+        mtext = Canva.transform.GetChild(3).GetComponent<Text>();
 
         GameObject bt1 = GameObject.Find("back_button");
         Button btn1 = bt1.GetComponent<Button>();
@@ -31,49 +38,40 @@ public class ballController : MonoBehaviour {
         btn = btnObj.GetComponent<Button>();
         btn.onClick.AddListener(delegate ()
         {
-            //GameObject obj = Canva.transform.GetChild(3).gameObject;
-            //Destroy(obj);
-            btn.transform.localPosition = new Vector3(0, 10000, 0);
-            transform.localPosition = new Vector3(0, 0.3f, 0);
-            rb.WakeUp();
-            isPlaying = true;
+            if (_instance.EnoughPlayGame(0))
+            {
+                //精力足够玩游戏
+                //清空输出框
+                mtext.text = "";
+
+                //GameObject obj = Canva.transform.GetChild(4).gameObject;
+                //Destroy(obj);
+                btn.transform.localPosition = new Vector3(0, 10000, 0);
+                transform.localPosition = new Vector3(0, 0.3f, 0);
+                rb.WakeUp();
+                isPlaying = true;
+                score++;
+            }
+            else
+            {
+                mtext.text = "You didn't have enough energy";
+            }
         });
-        /*
-        GameObject btnObj2 = GameObject.Find("Replay");//"Button"为你的Button的名称  
-        Button btn2 = btnObj2.GetComponent<Button>();
-        btn2.onClick.AddListener(delegate ()
-        {
-            Destroy(Canva.transform.GetChild(3).gameObject);
-            transform.localPosition = new Vector3(0, 0.3f, 0);
-            rb.WakeUp();
-        });
-        GameObject btnObj3 = GameObject.Find("Exit");//"Button"为你的Button的名称  
-        Button btn3 = btnObj3.GetComponent<Button>();
-        btn3.onClick.AddListener(delegate ()
-        {
-            SceneManager.LoadScene(3);
-        });
-        */
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (transform.localPosition.y < 0.04f && isPlaying)
-        {
-            //Destroy(gameObject);
-            //transform.localPosition = new Vector3(0, 0.3f, 0);
-            rb.Sleep();
-            //addButtons();
-            isSleeping = true;
-            isPlaying = false;
-        }
-        else if ((transform.localPosition.z < -0.4f || transform.localPosition.z > 0.4f || transform.localPosition.x < -0.4f || transform.localPosition.x > 0.35f) && isPlaying)
+        if ((transform.localPosition.y < 0.04f || transform.localPosition.z < -0.4f || transform.localPosition.z > 0.4f || transform.localPosition.x < -0.4f || transform.localPosition.x > 0.35f) && isPlaying)
         {
             //transform.localPosition = new Vector3(0, 0.3f, 0);
             rb.Sleep();
             //addButtons();
             isSleeping = true;
             isPlaying = false;
+
+            //计算分数
+            mtext.text = "Your Score is: " + score;
+            _instance.playGame(0, score);
         }
         if (isSleeping)
         {
@@ -85,47 +83,15 @@ public class ballController : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         if (isPlaying)
+        {
             rb.AddForce(new Vector3(Random.Range(-0.5f, 0.5f), 5.0f, Random.Range(-0.5f, 0.5f)) * thrust);//给球加向上（左右前后一定偏移量）的力
+            score++;
+        }
     }
 
     void movebuttonback()
     {
         //button settings
         btn.transform.localPosition = new Vector3(0, 0, 0);
-    }
-
-    void addButtons()
-    {
-        Button pfb = Resources.Load("Begin") as Button;
-        Button prefabInstance = Instantiate(pfb);
-        prefabInstance.name = "Begin";
-        prefabInstance.transform.parent = Canva.transform;
-        //button settings
-        //GameObject btnObj = GameObject.Find("Begin");//"Button"为你的Button的名称  
-        //Button btn = btnObj.GetComponent<Button>();
-        prefabInstance.onClick.AddListener(delegate ()
-        {
-            Destroy(Canva.transform.GetChild(3).gameObject);
-            transform.localPosition = new Vector3(0, 0.3f, 0);
-            rb.WakeUp();
-            isPlaying = true;
-        });
-        /*
-        GameObject btnObj2 = GameObject.Find("Replay");//"Button"为你的Button的名称  
-        Button btn2 = btnObj2.GetComponent<Button>();
-        btn2.onClick.AddListener(delegate ()
-        {
-            Destroy(Canva.transform.GetChild(3).gameObject);
-            transform.localPosition = new Vector3(0, 0.3f, 0);
-            rb.WakeUp();
-            isPlaying = true;
-        });
-        GameObject btnObj3 = GameObject.Find("Exit");//"Button"为你的Button的名称  
-        Button btn3 = btnObj3.GetComponent<Button>();
-        btn3.onClick.AddListener(delegate ()
-        {
-            SceneManager.LoadScene(3);
-        });
-        */
     }
 }

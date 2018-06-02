@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{403D1DA3-0F30-1433-DFA6-FCA875D3C009}</ProjectGuid>
+    <ProjectGuid>{B08EB274-8618-3C20-70F4-C213C9F9EC9B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -128,6 +128,9 @@
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>E:/june/unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="LitJson">
+ <HintPath>E:/june/Github/ARCAT_version1/Assets/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>

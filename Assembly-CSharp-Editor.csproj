@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{30770305-3569-AEB4-C7AA-702F1AA3F66D}</ProjectGuid>
+    <ProjectGuid>{BC714060-D5A7-4B34-4A54-6F8D4318BFA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -149,6 +149,9 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>E:/june/unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="LitJson">
+ <HintPath>E:/june/Github/ARCAT_version1/Assets/LitJson.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
@@ -173,11 +176,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{403D1DA3-0F30-1433-DFA6-FCA875D3C009}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{B08EB274-8618-3C20-70F4-C213C9F9EC9B}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{837A6833-4259-4D7C-0E17-29E650C1C101}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{75475C0F-7492-7FE7-33D2-257807049749}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{28803AAA-84D7-257A-8A43-45A9EA6F6C9E}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
+      <Project>{D377DEF2-BD88-A840-2DEB-BAB155787095}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
