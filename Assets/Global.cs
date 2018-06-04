@@ -14,8 +14,8 @@ public class Global{
     private int jingyan = 0; //当前经验  Dynamic
     private int[] bag = { 2, 1, 4, 0, 0, 0, 0, 0 }; //背包中每样东西的个数 Dynamic
 
-    private int[] maxjingli = { 20, 30, 40, 50, 55, 56, 57, 58, 59, 60, 70}; //每级对应最大精力
-    private int[] maxjingyan = { 20, 30, 40, 50, 55, 56, 57, 58, 59, 60, 70 }; //每级对应最大经验值
+    private int[] maxjingli = { 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 70}; //每级对应最大精力
+    private int[] maxjingyan = { 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1500, 2000 }; //每级对应最大经验值
     private int maxGrade = 10; //最高级数
     private int[] shop_price = { 1, 2, 3, 4, 5, 6, 7, 8 };  //商店中每样东西价格
     private int[] shop_jingli = { 2, 3, 4, 5, 6, 7, 8, 9 }; //商店中每样东西可加精力
@@ -142,9 +142,10 @@ public class Global{
         _instance.jingli -= _instance.playgame_jingli[index];
         if(index == 0)
         {
-            //游戏0的奖励方式 zuqiu
+            //游戏0的奖励方式 ：0表示足球游戏
             //经验值增加，注意升级
-            _instance.jingyan += 65;
+
+            _instance.jingyan += score;
             while(_instance.jingyan / _instance.maxjingyan[_instance.Grade] != 0)
             {
                 //升级
@@ -156,9 +157,9 @@ public class Global{
         }
         else
         {
-            //游戏1的奖励方式
+            //游戏1的奖励方式：游戏1是鬼屋抓老鼠游戏
             //经验值增加，注意升级
-            _instance.jingyan += 10;
+            _instance.jingyan += score;
             while (_instance.jingyan / _instance.maxjingyan[_instance.Grade] != 0)
             {
                 //升级
@@ -209,6 +210,11 @@ public class Global{
     public int getShopJishu(int index)
     {
         return _instance.shop_jishu[index];
+    }
+
+    public int getMaxJinyan(int index)
+    {
+        return _instance.maxjingyan[index];
     }
 
     //解析json文件  

@@ -45,8 +45,9 @@ public class housethree : MonoBehaviour {
     Vector3 NPCdes;
 
     bool gameBegin = false;
- public  bool gameEnd = false;
-
+    public  bool gameEnd = false;
+    Global _instance;
+  
 
     void transPosandDes()
     {
@@ -69,7 +70,9 @@ public class housethree : MonoBehaviour {
 
         score_text.text = "SCORE:" + 0;
 
-        play_again.interactable = false;
+        _instance = Global.GetInstance();
+
+        // play_again.interactable = false;
 
         if (true)
         {
@@ -98,7 +101,7 @@ public class housethree : MonoBehaviour {
                     index = 0;
                     isTalk = false;
                     isWait = true;
-                   
+
 
                 }
 
@@ -124,6 +127,26 @@ public class housethree : MonoBehaviour {
                 }
             });
             mText.text = "NPC:" + mData[index];
+
+            play_again.onClick.AddListener(delegate () //重玩按钮
+            {
+
+                if (_instance.EnoughPlayGame(1))
+                {
+                    gameEnd = false;
+                    gameBegin = true;
+                   
+                    _instance.playGame(1, jishi/50);
+                    jishi = 0;
+
+                }
+                else
+                {
+                    gameEnd = true;
+                    result_text.text = "You didn't have enough energy!";
+                }
+
+            });
         }
 
     }
@@ -136,6 +159,7 @@ public class housethree : MonoBehaviour {
             transform.GetChild(2).GetComponent<NavMeshAgent>().destination = transform.GetChild(1).position;
             jishi++;
             score_text.text = "SCORE:" + jishi/50;
+            
         }
         //   des = transform.GetChild(1).localPosition;
         //  transform.GetChild(2).GetComponent<NavMeshAgent>().destination = transform.GetChild(1).position;
@@ -164,20 +188,23 @@ public class housethree : MonoBehaviour {
 
         if(gameEnd == true)
         {
-            result_text.text = "你被抓住了！";
+            if (!_instance.EnoughPlayGame(1))
+            {
+                result_text.text = "You didn't have enough energy!";
+            }
+            else
+            {
+                result_text.text = "You were caught by the cat！";
+            }
         }
         else
         {
+
             result_text.text = "";
+ 
         }
 
-         play_again.onClick.AddListener(delegate ()
-         {
-            gameEnd = false;
-            gameBegin = true;
-            jishi = 0;
-            
-         });
+     
     }
 
 

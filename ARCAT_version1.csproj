@@ -224,6 +224,9 @@
     <Reference Include="Vuforia.UnityExtensions">
       <HintPath>E:/unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="LitJson">
+      <HintPath>Assets/LitJson.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -246,6 +249,9 @@
   <ItemGroup>
     <Compile Include="Assets\back_button.cs" />
     <Compile Include="Assets\back_to_SceneOne.cs" />
+    <Compile Include="Assets\bagbutton.cs" />
+    <Compile Include="Assets\bagexit_button.cs" />
+    <Compile Include="Assets\bagobj_button.cs" />
     <Compile Include="Assets\ballController.cs" />
     <Compile Include="Assets\bullet_model\Plugins\Effect\Script\CameraTarget.cs" />
     <Compile Include="Assets\bullet_model\Plugins\Effect\Script\EffectController.cs" />
@@ -253,11 +259,16 @@
     <Compile Include="Assets\bullet_model\Plugins\Effect\Script\EffectShaderPropertyStr.cs" />
     <Compile Include="Assets\bullet_model\Plugins\Effect\Script\RenderEffect.cs" />
     <Compile Include="Assets\bullet_model\Plugins\Effect\Script\TransformExtension.cs" />
+    <Compile Include="Assets\buyfood.cs" />
     <Compile Include="Assets\CameraFrame.cs" />
+    <Compile Include="Assets\data.cs" />
+    <Compile Include="Assets\Global.cs" />
     <Compile Include="Assets\GrassRoadRace\Script\CameraMove.cs" />
     <Compile Include="Assets\houseone.cs" />
     <Compile Include="Assets\housethree.cs" />
     <Compile Include="Assets\housetwo.cs" />
+    <Compile Include="Assets\infomation.cs" />
+    <Compile Include="Assets\MakakaIconPack\Scripts\SampleControl.cs" />
     <Compile Include="Assets\moveCat.cs" />
     <Compile Include="Assets\moveMouse.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
@@ -315,10 +326,14 @@
     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\QueryMechanimController.cs" />
     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\QuerySoundController.cs" />
     <Compile Include="Assets\quit_button.cs" />
+    <Compile Include="Assets\shopbutton.cs" />
+    <Compile Include="Assets\shopexit_button.cs" />
+    <Compile Include="Assets\shopobj_button.cs" />
     <Compile Include="Assets\SimpleTouchController\Scripts\InfoTouches.cs" />
     <Compile Include="Assets\SimpleTouchController\Scripts\PlayerMoveController.cs" />
     <Compile Include="Assets\SimpleTouchController\Scripts\SimpleTouchController.cs" />
     <Compile Include="Assets\start_button.cs" />
+    <Compile Include="Assets\useFood.cs" />
     <Compile Include="Assets\VirtualButton.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
@@ -330,6 +345,7 @@
     <None Include="Assets\Editor\Vuforia\TargetsetData\VuforiaMars_Object_info.xml" />
     <None Include="Assets\Editor\Vuforia\VuforiaMars_ModelTarget\authoringinfo.xml" />
     <None Include="Assets\Editor\Vuforia\VuforiaMars_VuMark\authoringinfo.xml" />
+    <None Include="Assets\MakakaIconPack\Fonts\Font_Read_Me.txt" />
     <None Include="Assets\Minimalist Christmas\readme.txt" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />

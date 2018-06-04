@@ -54,7 +54,7 @@ public class ballController : MonoBehaviour {
             }
             else
             {
-                mtext.text = "You didn't have enough energy";
+                mtext.text = "You didn't have enough energy!";
             }
         });
     }
