@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/DEMO.unity
+- path: Assets/ballgame.unity
   isLoaded: 1
   isActive: 1
