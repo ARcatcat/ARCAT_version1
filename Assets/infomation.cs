@@ -30,7 +30,7 @@ public class infomation : MonoBehaviour {
         money.text = "" + _instance.getDollars();
         grade.text = "" + _instance.getGrade();
         jingyan.text = "" + _instance.getJingyan() + "/" + _instance.getMaxJinyan(_instance.getGrade());
-        jingli.text = "" + _instance.getJingli();
+        jingli.text = "" + _instance.getJingli()+ "/" + _instance.getMaxJingli(_instance.getGrade());
 
         HPStrip.value = 1.0f *_instance.getJingyan() / (_instance.getMaxJinyan(_instance.getGrade()));
     }

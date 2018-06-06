@@ -72,6 +72,7 @@ public class ballController : MonoBehaviour {
             //计算分数
             mtext.text = "Your Score is: " + score;
             _instance.playGame(0, score);
+            score = 0;
         }
         if (isSleeping)
         {

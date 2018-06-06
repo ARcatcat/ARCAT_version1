@@ -36,7 +36,7 @@ public class Global{
             _instance = new Global();
 
             //read the json document
-            /* string path = Application.dataPath + "/data.json";
+            string path = Application.persistentDataPath + "/data.json";
              if (File.Exists(path))
              {
                  data Data = ParseFile(path);
@@ -52,47 +52,9 @@ public class Global{
                  _instance.bag[5] = Data.bag5;
                  _instance.bag[6] = Data.bag6;
                  _instance.bag[7] = Data.bag7;
-             }*/
+             }
 
-  
-            _instance.dollor = PlayerPrefs.GetInt("dollar");
-            _instance.Grade = PlayerPrefs.GetInt("grade");
-            _instance.jingli = PlayerPrefs.GetInt("jingli");
-            _instance.jingyan = PlayerPrefs.GetInt("jingyan");
-            _instance.bag[0] = PlayerPrefs.GetInt("bag0");
-            _instance.bag[1] = PlayerPrefs.GetInt("bag1");
-            _instance.bag[2] = PlayerPrefs.GetInt("bag2");
-            _instance.bag[3] = PlayerPrefs.GetInt("bag3");
-            _instance.bag[4] = PlayerPrefs.GetInt("bag4");
-            _instance.bag[5] = PlayerPrefs.GetInt("bag5");
-            _instance.bag[6] = PlayerPrefs.GetInt("bag6");
-            _instance.bag[7] = PlayerPrefs.GetInt("bag7");
-
-            PlayerPrefs.SetInt("dollar", _instance.dollor);
-            PlayerPrefs.SetInt("grade", _instance.Grade);
-            PlayerPrefs.SetInt("jingli", _instance.jingli);
-            PlayerPrefs.SetInt("jingyan", _instance.jingyan);
-            PlayerPrefs.SetInt("bag0", _instance.bag[0]);
-            PlayerPrefs.SetInt("bag1", _instance.bag[1]);
-            PlayerPrefs.SetInt("bag2", _instance.bag[2]);
-            PlayerPrefs.SetInt("bag3", _instance.bag[3]);
-            PlayerPrefs.SetInt("bag4", _instance.bag[4]);
-            PlayerPrefs.SetInt("bag5", _instance.bag[5]);
-            PlayerPrefs.SetInt("bag6", _instance.bag[6]);
-            PlayerPrefs.SetInt("bag7", _instance.bag[7]);
-
-            _instance.dollor = PlayerPrefs.GetInt("dollar");
-            _instance.Grade = PlayerPrefs.GetInt("grade");
-            _instance.jingli = PlayerPrefs.GetInt("jingli");
-            _instance.jingyan = PlayerPrefs.GetInt("jingyan");
-            _instance.bag[0] = PlayerPrefs.GetInt("bag0");
-            _instance.bag[1] = PlayerPrefs.GetInt("bag1");
-            _instance.bag[2] = PlayerPrefs.GetInt("bag2");
-            _instance.bag[3] = PlayerPrefs.GetInt("bag3");
-            _instance.bag[4] = PlayerPrefs.GetInt("bag4");
-            _instance.bag[5] = PlayerPrefs.GetInt("bag5");
-            _instance.bag[6] = PlayerPrefs.GetInt("bag6");
-            _instance.bag[7] = PlayerPrefs.GetInt("bag7");
+         
 
 
         }
@@ -124,11 +86,11 @@ public class Global{
     void writeJson()
     {
         //write back to json data
-        /*
+        
         string path = Application.dataPath + "/data.json";
         data Data = new data(_instance.dollor, _instance.Grade, _instance.jingli, _instance.jingyan, _instance.bag);
         CreateFile(path, Data);
-        */
+        
 
         //PlayerPrefs.SetInt("grade", 5);
         PlayerPrefs.SetInt("dollar", _instance.dollor);
@@ -266,6 +228,10 @@ public class Global{
     public int getMaxJinyan(int index)
     {
         return _instance.maxjingyan[index];
+    }
+    public int getMaxJingli(int index)
+    {
+        return _instance.maxjingli[index];
     }
 
     //解析json文件  
