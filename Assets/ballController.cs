@@ -50,7 +50,7 @@ public class ballController : MonoBehaviour {
                 transform.localPosition = new Vector3(0, 0.3f, 0);
                 rb.WakeUp();
                 isPlaying = true;
-                score++;
+                score = 0;
             }
             else
             {
